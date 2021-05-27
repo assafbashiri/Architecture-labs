@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/html40/loose.dtd">
+<html>
+  <head>
+    <meta name="author" content="tamirgr"/>
+    <meta name="keywords" content="lab sessions"/>
+    <meta name="description" content="Computer Architecture and system programming laboratory - 2021/Spring"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <link rel="stylesheet" type="text/css" href="/~lab/course.wiki/style/global.css"/>
+    <link rel="stylesheet" type="text/css" href="/~lab/course.wiki/style/structure.css"/>
+    <link rel="stylesheet" type="text/css" href="/~lab/course.wiki/style/print.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="/~lab/course.wiki/themes/blue/main.css"/>
+    <link rel="shortcut icon" href="/~lab/course.wiki/images/flavicon.gif"/>
+    <link rel="search" type="application/opensearchdescription+xml" title="Computer Architecture and system programming laboratory - 2021/Spring" href="http://www.cs.bgu.ac.il/~caspl212/Search?action=opensearch.xml" />
+        <title>Computer Architecture and system programming laboratory - 2021/Spring - Lab Sessions</title>
+
+<!-- Accessibility - cs.bgu.ac.il. Added by Liat Dukhan 20_8_2018 for Nagish Be Click-->
+<script data-cfasync="false"> 
+	window.interdeal = {
+		sitekey   : "b5bc2828e81e37d108096d991ba61619",
+		Position  : "Left",
+		Menulang  : "EN",
+	}
+</script>
+<script src="https://js.nagich.co.il/accessibility.js" async data-cfasync="false"></script>
+
+<script type="text/javascript" src="/~lab/course.wiki/scripts/jquery.js"></script> 
+<script type="text/javascript" src="/~lab/course.wiki/scripts/jquery.cswiki.js"></script> 
+<script type="text/javascript">
+function win(u,n,w,h){
+  if(n == '') n='Small_Window_'+Math.ceil((Math.random()*100000));
+  window.open(u,n,'width='+w+',height='+h+',status=yes,resizable=yes,scrollbars=yes');
+}
+
+function ajax_request(action,params,cont,type){
+  if(!type) type = 'json';
+  $.ajaxSetup({ async:true,
+                error: function (XMLHttpRequest, textStatus, errorThrown) { alert(textStatus);}});
+  params.action = action;
+  params.format = 'ajax';
+  $.post('/~caspl212/index.php', params , cont, type);
+}
+
+// JQuery things
+$(document).ready(function(){
+  $.ImagesBase = "/~lab/course.wiki/images/";
+  $('div.code,pre.code[filename!=]').code({ base: "/~caspl212/index.php" , imagesBase: $.ImagesBase});
+  $('ul.collapsible').collapsible();
+});
+</script> 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax:
+    {
+        inlineMath: [["$","$"], ["\\(","\\)"]],
+        ignoreClass: ".*",
+        processClass: "__mathjax"
+    },
+    "HTML-CSS": { webFont: null }
+  });
+</script> 
+  </head>
+<body style="margin: 35px">
+
+<div id="header">
+<form action="/~caspl212/index.php" method="post" class="main-search" id="search-form">
+<input type="hidden" name="page" value="Search"/>
+<a href="/~caspl212/Search">Search</a> &nbsp;
+<input type="text" name="q" value=""/>
+<input type="submit" value="Go"/>
+</form>
+<div class="title"><a href="/~caspl212/index.php" >Computer Architecture and system programming laboratory - 2021/Spring</a></div>
+</div>
+
+<div id="container">
+
+<div id="left-sidebar">
+  <ul>
+<li> <a href="/~caspl212/Main">Main</a></li><li> <a href="http://www.cs.bgu.ac.il/~shimony/arch2021/arch_syl.html"> Syllabus</a>
+</li><li> <a href="/~caspl212/CourseInfo">Course info</a>: <a href="https://www.cs.bgu.ac.il/~caspl212/CourseInfo">Arch&SPlab</a>,
+<a href="https://www.cs.bgu.ac.il/~splab212/CourseInfo">Splab</a>, <a href="https://www.cs.bgu.ac.il/~arch212/CourseInfo">Arch only</a>.
+</li><li> <a href="/~caspl212/Announcements">Announcements</a></li><li> <a href="/~caspl212/Assignments">Assignments</a></li><li> <a href="/~caspl212/Class_Material">Class material</a></li><li> <a href="/~caspl212/Practical_Sessions">Practical sessions</a></li><li> <a href="/~caspl212/Lab_Sessions">Lab sessions</a></li><li> <a href="/~caspl212/Lab_Completions">Lab Completions</a></li><li> <a href="/~caspl212/Previous_Exams">Previous exams</a></li><li> <a href="/~caspl212/Useful_Links">Useful links</a></li><li> <a href="/~caspl212/Forum">Forum</a></li><li> <a href="/~caspl212/Labs_Forum">Labs Forum</a></li><li> <a href="/~caspl212/Administrative_Q_And_A">Administrative Q&A</a></li><li> <a href="http://cs-serv.cs.bgu.ac.il/cs_service/subsys.html" class="external" rel="nofollow">Submission system</a>
+</li></ul>
+    <br/>
+  
+    <ul>
+      <li><a href="/~caspl212/CsWiki/RecentChanges">recent changes</a></li>
+      <li><a href="/~caspl212/index.php?action=logout">logout</a></li>
+    </ul>
+  
+    <br/> 
+  <b>bashiria</b> logged in
+  <br/>
+  <b>student</b> mode
+  <br/>
+  <iframe width="0" height="0" src="/~caspl212/index.php?page=CsWiki.InfiniteSession&format=raw" scrolling="no" frameborder="no" border="0" marginwidth="0" marginheight="0" id="infinite_frame">sorry...</iframe>
+  
+</div>
+
+<div id="center-container">
+    
+<div id="navigate-bar">
+  <div class="actions">
+  <a href="/~caspl212/Lab_Sessions?format=standalone" rel="nofollow">printable version</a>  </div>
+  &bull; <a href="/~caspl212/Lab_Sessions">Lab Sessions</a></div>
+
+<div id="main">
+<div class="info" style="display:none" id="message-info"></div>
+<div class="warning" style="display:none" id="message-error"></div>
+
+
+<h1>Lab Sessions</h1>
+<table width="100%">
+    <tr>
+      <td><b>Lab#</b></td>
+      <td><b>Tasks</b></td>
+      <td><b>Reading Material</b></td>
+      <td><b>Topics</b></td>
+   </tr>
+    <tr>
+      <td>1</td>
+      <td><a href="/~caspl212/Lab1/Tasks">‎Tasks</a></td>
+      <td><a href="/~caspl212/Lab1/Reading">Reading Material</a></td>
+      <td>Rudimentary C programming, make files</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><a href="/~caspl212/Lab2/Tasks">‎Tasks</a></td>
+      <td><a href="/~caspl212/Lab2/Reading">Reading Material</a></td>
+      <td>C programming - pointers, function pointers and simple data structures</td>
+    </tr>
+<tr>
+      <td>3</td>
+<td><a href="/~caspl212/Lab3/Tasks">Tasks</a></td>
+<td><a href="/~caspl212/Lab3/Reading">Reading Material</a></td>
+      <td>C programming - data structures, virus detection, patching</td>
+    </tr>
+<tr>
+      <td>4</td>
+      <td><a href="/~caspl212/Lab4/Tasks">‎Tasks</a></td>
+      <td><a href="/~caspl212/Lab4/Reading_Material">Reading Material</a></td>
+      <td>System Calls</td>
+    </tr>
+<tr>
+      <td>5</td>
+      <td><a href="/~caspl212/Lab5/Tasks">Tasks</a></td>
+      <td><a href="/~caspl212/Lab5/Reading">Reading Material</a></td>
+      <td>Command Interpreter (Shell)</td>
+    </tr>
+   <tr>
+      <td>6</td>
+      <td><a href="/~caspl212/Lab6/Tasks">Tasks</a></td>
+      <td><a href="/~caspl212/wiki.files/lab5_reading.html">Reading Material</a></td>
+      <td>Shell: I/O Redirection and Pipes</td>
+    </tr>
+   <tr>
+      <td>7</td>
+      <td><a href="/~caspl212/Lab7/Tasks">Tasks</a></td>
+      <td><a href="/~caspl212/Lab7/Reading_Material">Reading Material</a></td>
+      <td>ELF - Introduction</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><a href="/~caspl212/Lab8/Tasks">Tasks</a></td>
+      <td><a href="/~caspl212/Lab8/Reading_Material">Reading Material</a></td>
+      <td>ELF - Basic manipulation</td>
+</tr>
+<p>
+</table>
+<h1>Semester Schedule (Subject to Change)</h1>
+<table width="100%">
+    <tr>
+      <td><b>Week Dates</b></td>
+      <td><b>Lectures</b></td>
+      <td><b>Lecture Topics</b></td>
+      <td><b>Labs</b></td>
+   </tr>
+    <tr>
+      <td>Feb. 28 - Mar. 4</td>
+      <td>Lecture 1 (SPlab Lecture I)</td>
+      <td>Course Introduction</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Mar. 7 - Mar. 11</td>
+      <td>Lecture 2</td>
+      <td>Architecture Basics</td>
+      <td>Lab 1: C Primer</td>
+    </tr>
+    <tr>
+      <td>Mar. 14 - Mar. 18</td>
+      <td>Lecture 3</td>
+      <td>Intsruction Format, Addressing Modes</td>
+      <td>Lab 2: Pointers and Structures</td>
+    </tr>
+    <tr>
+      <td>Mar. 21 - Mar. 22</td>
+      <td>Canceled</td>
+      <td>Passover + Elections</td>
+      <td>Completion Labs</td>
+    </tr>
+    <tr>
+      <td>Apr. 4 - Apr. 8</td>
+      <td>Lecture 4</td>
+      <td>Instruction Categories</td>
+      <td>Lab 3: Linked Lists</td>
+    </tr>
+    <tr>
+      <td>Apr. 11 - Apr. 13</td>
+      <td>Lecture 5</td>
+      <td>Calling Conventions</td>
+      <td>Completion Labs</td>
+    </tr>
+    <tr>
+      <td>Apr. 18 - Apr. 22</td>
+      <td>Lecture 6</td>
+      <td>Assembly and Linking, Macros</td>
+      <td>Lab 4: System Calls</td>
+    </tr>
+    <tr>
+      <td>Apr. 25 - Apr. 29</td>
+      <td>Lecture 7 (SPlab Lecture II)</td>
+      <td>File System, Shell</td>
+      <td>Completion Labs</td>
+    </tr>
+    <tr>
+      <td>May 2 - May 6</td>
+      <td>Lecture 8</td>
+      <td>Co-Routines</td>
+      <td>Lab 5: Shell</td>
+    </tr>
+    <tr>
+      <td>May 9 - May 13</td>
+      <td>Lecture 9 (SP Lab Lecture III)</td>
+      <td>Binary Files, ELF, Linking and Loading</td>
+      <td>Lab 6: Shell Features</td>
+    </tr>
+    <tr>
+      <td>May 16 - May 20</td>
+      <td>Lecture 10</td>
+      <td>Floating Point</td>
+      <td>Lab 7: HexEditPlus</td>
+    </tr>
+    <tr>
+      <td>May 23 - May 27</td>
+      <td>Lecture 11</td>
+      <td>Position-Independent Code, Advanced Issues</td>
+      <td>Lab 7: HexEditPlus ends, Lab 8: ELF Files</td>
+    </tr>
+    <tr>
+      <td>May 30 - June 3</td>
+      <td>Lecture 12</td>
+      <td>Introduction to Hacking</td>
+      <td>Lab 8: ELF Files ends, completion labs</td>
+    </tr>
+    <tr>
+      <td>June 6 - June 10</td>
+      <td>Lecture 13</td>
+      <td>Performance Issues</td>
+      <td>Completion Labs</td>
+    </tr>
+    <tr>
+      <td>June 13 - June 17</td>
+      <td>Lecture 14</td>
+      <td>Input/Output</td>
+      <td>Lab 9: Virus (Loader)</td>
+    </tr>
+</table>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+    
+<div id="footer">
+Page last modified on 26 May 2021,  15:03 by <b>tamirgr</b><br/>
+powered by <a href="http://www.cs.bgu.ac.il/~ygleyzer/course.wiki/">CourseWiki 2.4.2</a>
+, <a href="http://www.gzip.org/">gzip</a> supported
+<br/>
+generated in 0.00069666 sec.
+</div>
+
+</body>
+</html>
+
